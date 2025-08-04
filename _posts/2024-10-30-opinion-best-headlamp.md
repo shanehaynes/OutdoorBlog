@@ -1,16 +1,9 @@
 ---
-title: "The Only Headlamp You Need"
+layout: post
+title: "Opinion: Best Headlamp"
 date: 2024-10-30
-featured_image: /assets/images/headlamp.jpg
 category: opinion
-brand: Black Diamond Spot
-pros:
-  - Bright
-  - Long battery life
-  - Waterproof
-cons:
-  - Slightly heavy
-  - Button can be finicky
+featured_image: assets/images/headlamp.jpg
 ---
 
 After years of night hiking, this is the only headlamp I trust for big adventures. 

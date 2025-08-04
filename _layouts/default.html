@@ -18,7 +18,7 @@
     <div class="header-inner">
       <div class="header-title-center">
         <h1 class="site-title">
-          <a href="/" class="site-title-link">Becoming Weathered</a>
+          <a href="{{ '/' | relative_url }}" class="site-title-link">TYPE 2 CONNOISSEUR</a>
         </h1>
       </div>
     </div>
@@ -27,9 +27,9 @@
   <!-- Filter Navigation -->
   <nav class="filter-nav">
     <div class="filter-container">
-      <a href="/" class="filter-btn" data-filter="all">Trips</a>
-      <a href="/" class="filter-btn" data-filter="gear">Gear</a>
-      <a href="/" class="filter-btn" data-filter="musings">Musings</a>
+      <a href="{{ '/' | relative_url }}" class="filter-btn" data-filter="all">Trips</a>
+      <a href="{{ '/' | relative_url }}" class="filter-btn" data-filter="gear">Gear</a>
+      <a href="{{ '/' | relative_url }}" class="filter-btn" data-filter="musings">Musings</a>
     </div>
   </nav>
 
@@ -40,7 +40,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <a href="/about/" class="about-link">About</a>
+      <a href="{{ '/about/' | relative_url }}" class="about-link">About</a>
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
     </div>
   </footer>

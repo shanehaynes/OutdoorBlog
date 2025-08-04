@@ -1,8 +1,9 @@
 ---
-title: "Why I Switched to Trail Runners"
+layout: post
+title: "Opinion: Hiking Boots"
 date: 2025-02-15
-featured_image: /assets/images/trailrunners.jpg
 category: opinion
+featured_image: assets/images/trailrunners.jpg
 post_type: gear
 brand: Altra Lone Peak
 pros:

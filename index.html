@@ -12,7 +12,7 @@ title: "Homepage"
           <!-- Background Image -->
           <div class="post-image">
             <img 
-              src="{{ post.featured_image | default: '/assets/images/default.jpg' }}" 
+              src="{{ post.featured_image | relative_url | default: '/assets/images/default.jpg' }}" 
               alt="Featured image for {{ post.title }}" 
               class="featured-img" 
             />

@@ -1,8 +1,9 @@
 ---
-title: "Ultralight vs. Traditional Backpacking: My Take"
+layout: post
+title: "Opinion: Ultralight vs Traditional"
 date: 2025-01-10
-featured_image: /assets/images/ultralight.jpg
 category: opinion
+featured_image: assets/images/ultralight.jpg
 post_type: musings
 brand: Hyperlite Mountain Gear
 pros:
