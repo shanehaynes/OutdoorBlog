@@ -1,0 +1,109 @@
+---
+layout: default
+title: "Homepage"
+---
+
+<!-- index.html: The Homepage with Paginated Post Previews -->
+<section class="posts-list">
+  {% if paginator %}
+    {% for post in paginator.posts %}
+      <article class="post-item" data-post-type="{{ post.post_type | default: 'trips' }}">
+        <a href="{{ post.url | relative_url }}" class="post-link">
+          <!-- Background Image -->
+          <div class="post-image">
+            <img 
+              src="{{ post.featured_image | default: '/assets/images/default.jpg' }}" 
+              alt="Featured image for {{ post.title }}" 
+              class="featured-img" 
+            />
+          </div>
+          
+          <!-- Overlay with Title, Date, and Qualifiers -->
+          <div class="post-overlay">
+            <div class="post-content">
+              <div class="post-title">
+                <span class="post-title-text">{{ post.title }}</span>
+                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+              </div>
+              
+              <!-- Qualifying fields or post excerpt (hidden by default) -->
+              <div class="post-details">
+                {% if post.mileage or post.elevation_gain or post.yds_grade or post.pitches or post.steepness or post.c2c_time %}
+                  <ul class="post-qualifiers">
+                    {% if post.mileage %}
+                      <li>Mileage: {{ post.mileage }}</li>
+                    {% endif %}
+                    {% if post.elevation_gain %}
+                      <li>Elevation: {{ post.elevation_gain }} ft</li>
+                    {% endif %}
+                    {% if post.yds_grade %}
+                      <li>Grade: {{ post.yds_grade }}</li>
+                    {% endif %}
+                    {% if post.pitches %}
+                      <li>Pitches: {{ post.pitches }}</li>
+                    {% endif %}
+                    {% if post.steepness %}
+                      <li>Steepness: {{ post.steepness }}</li>
+                    {% endif %}
+                    {% if post.c2c_time %}
+                      <li>Time: {{ post.c2c_time }}</li>
+                    {% endif %}
+                  </ul>
+                {% else %}
+                  <p class="post-excerpt">{{ post.content | strip_html | truncate: 100 }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No posts found or pagination not configured.</p>
+  {% endif %}
+</section>
+
+<!-- Pagination Links -->
+{% if paginator %}
+  <nav class="pagination">
+    {% if paginator.previous_page %}
+      <a class="prev-page" href="{{ paginator.previous_page_path | relative_url }}">Previous Page</a>
+    {% endif %}
+    {% if paginator.next_page %}
+      <a class="next-page" href="{{ paginator.next_page_path | relative_url }}">Next Page</a>
+    {% endif %}
+  </nav>
+{% endif %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const postItems = document.querySelectorAll('.post-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      const filterType = this.getAttribute('data-filter');
+      
+      postItems.forEach(item => {
+        const postType = item.getAttribute('data-post-type');
+        
+        if (filterType === 'all' || postType === filterType) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+  
+  // No default active state - all posts shown by default
+});
+</script>

@@ -1,0 +1,601 @@
+.post-block {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 1rem;
+}
+
+.post-image {
+  flex: 0 0 40%; /* 40% of container width */
+  margin-right: 1rem;
+}
+
+.post-image img.featured-img {
+  width: 100%;     /* keeps the image within its container */
+  height: auto;    /* maintains aspect ratio (16:9 if your image is sized that way) */
+  display: block;
+}
+
+.post-info {
+  flex: 1; /* Takes remaining width */
+}
+
+.post-category {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.trip-report-badge {
+  background-color: hsl(32, 100%, 97%); /* A greenish hue for trip reports */
+}
+
+.opinion-badge {
+  background-color: #963131; /* A warmer hue for opinions */
+}
+
+.post-title {
+  margin: 0.5rem 0;
+}
+
+.post-excerpt {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.post-attributes {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.post-attributes li {
+  margin: 0.25rem 0;
+}
+
+.pagination {
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2vh 0;
+}
+
+.pagination a {
+  padding: 0.8rem 1.5rem;
+  background-color: #8B4513;
+  text-decoration: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.pagination a:hover {
+  background-color: #A0522D;
+}
+
+/* Header Styles */
+.site-header {
+  height: 8vh;
+  min-height: 60px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+.header-title-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: 'Aboreto', serif;
+  text-transform: uppercase;
+}
+
+.site-title-link {
+  color: hsl(32, 100%, 97%);
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.site-title-link:hover {
+  color: #8B4513;
+}
+
+
+
+.about-link {
+  font-size: 1.1rem;
+  color: hsl(32, 100%, 97%);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.about-link:hover {
+  color: #A0522D;
+}
+
+/* Footer Styles */
+.site-footer {
+  background: #1a1a1a;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid #444;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer-inner .about-link {
+  font-size: 1.1rem;
+  color: hsl(32, 100%, 97%);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.footer-inner .about-link:hover {
+  color: #A0522D;
+}
+
+.footer-inner p {
+  margin: 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Post List Styles for Homepage */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+  padding: 2vh 0;
+  width: 100%;
+}
+
+.post-item {
+  position: relative;
+  width: 85%;
+  height: 65vh;
+  min-height: 300px;
+  background: #1a1a1a;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.post-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.post-item:hover {
+  transform: translateY(-2px);
+}
+
+.post-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.post-image img.featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.post-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(20, 20, 20, 0.9);
+  color: hsl(32, 100%, 97%);
+  transition: height 0.3s ease;
+  height: 11.5%;
+  overflow: hidden;
+}
+
+.post-item:hover .post-overlay {
+  height: 21%;
+}
+
+.post-content {
+  padding: 1rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.post-title {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: 'Aboreto', serif;
+}
+
+.post-title-text {
+  color: hsl(32, 100%, 97%);
+}
+
+.post-date {
+  font-style: italic;
+  color: #e0e0d0;
+  font-size: 1rem;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.post-details {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.post-item:hover .post-details {
+  opacity: 1;
+}
+
+.post-qualifiers {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.post-qualifiers li {
+  font-size: 0.9rem;
+  color: #e0e0d0;
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-excerpt {
+  font-size: 0.9rem;
+  color: #e0e0d0;
+  margin: 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Filter Navigation Styles */
+.filter-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh 0;
+  background: #1a1a1a;
+  border-bottom: 1px solid #555;
+}
+
+.filter-container {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.2s;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.filter-btn:hover {
+  color: #8B4513;
+  border-color: #8B4513;
+}
+
+.filter-btn.active {
+  color: #8B4513;
+  background: #1a1a1a;
+  border-color: #8B4513;
+}
+
+/* Sharp, aggressive, readable font system */
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Inter:wght@400;500;600;700&display=swap');
+
+body, .blog-post {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: hsl(32, 100%, 97%);
+  font-weight: 400;
+  background-color: #1a1a1a;
+}
+
+.post-header {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.post-title-single {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: 1.5px;
+  color: hsl(32, 100%, 97%);
+  font-family: 'Aboreto', serif;
+}
+
+.post-featured-image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.post-featured-image {
+  width: 70%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  background: #444;
+}
+
+.trip-stats, .opinion-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 1.2rem 0 2rem 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.trip-stats li, .opinion-stats li {
+  background: #444;
+  color: hsl(32, 100%, 97%);
+  border-radius: 5px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.post-body {
+  margin: 0 auto;
+  max-width: 70%;
+  padding: 2rem 1rem 4rem 1rem;
+  font-size: 1.15rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: left;
+  font-weight: 400;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  text-align: center;
+  font-family: 'Aboreto', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.post-body h1 {
+  font-size: 2.5rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.post-body h2 {
+  font-size: 2rem;
+  margin: 1.8rem 0 0.8rem 0;
+}
+
+.post-body h3 {
+  font-size: 1.6rem;
+  margin: 1.5rem 0 0.6rem 0;
+}
+
+.post-body img {
+  display: block;
+  margin: 2.5rem auto;
+  width: 80%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  background: #444;
+}
+
+@media (max-width: 700px) {
+  .post-title-single {
+    font-size: 2rem;
+  }
+  .post-featured-image, .post-body img {
+    width: 98%;
+    max-height: 28vh;
+  }
+  .trip-stats, .opinion-stats {
+    flex-direction: column;
+    gap: 0.7rem;
+    font-size: 1rem;
+  }
+  .post-body {
+    padding: 1rem 0.2rem 2rem 0.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .post-item {
+    width: 90%;
+    height: 40vh;
+  }
+  .post-title {
+    font-size: 1.5rem;
+  }
+  .posts-list {
+    grid-template-columns: 1fr;
+    gap: 2vh 1vw;
+    padding: 2vh 1vw;
+  }
+  .post-card-info {
+    padding: 0.8rem 0.6rem;
+  }
+  .post-card-title {
+    font-size: 0.9rem;
+  }
+  .filter-container {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-item {
+    width: 95%;
+    height: 35vh;
+  }
+  .post-title {
+    font-size: 1.3rem;
+  }
+  .post-content {
+    padding: 0.8rem 1rem;
+  }
+  .post-card {
+    flex-direction: column;
+    height: auto;
+    min-height: 150px;
+  }
+  .post-card-info, .post-card-image {
+    width: 100%;
+    min-width: 0;
+    padding: 0.7rem 1rem;
+  }
+  .post-card-image {
+    min-height: 120px;
+    justify-content: center;
+  }
+  .filter-container {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+.image-annotated {
+  position: relative;
+  display: block;
+  max-width: 80%;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.image-annotated img {
+  position: relative;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  background: #444;
+  line-height: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.image-annotation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  color: hsl(32, 100%, 97%);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border-radius: 0 0 10px 10px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  padding: 0 1rem;
+  overflow: hidden;
+  z-index: 2;
+  margin-bottom: 0;
+}
+
+.image-annotated img:hover + .image-annotation,
+.image-annotated img:focus + .image-annotation {
+  opacity: 1;
+  pointer-events: auto;
+}

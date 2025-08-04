@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title | escape }} | {{ site.title }}</title>
+  <!-- Basic SEO tags -->
+  <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Link to your main CSS (if you have a CSS file in assets/css/style.css) -->
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
+
+  <!-- Any additional meta tags or links to fonts, icons, etc. can go here -->
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-title-center">
+        <h1 class="site-title">
+          <a href="/" class="site-title-link">Becoming Weathered</a>
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Navigation -->
+  <nav class="filter-nav">
+    <div class="filter-container">
+      <a href="/" class="filter-btn" data-filter="all">Trips</a>
+      <a href="/" class="filter-btn" data-filter="gear">Gear</a>
+      <a href="/" class="filter-btn" data-filter="musings">Musings</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="site-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/about/" class="about-link">About</a>
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
