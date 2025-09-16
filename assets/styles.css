@@ -605,3 +605,108 @@ body, .blog-post {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* About Page Styles */
+.about-page {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem 1rem;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1.5px;
+  color: hsl(32, 100%, 97%);
+  font-family: 'Aboreto', serif;
+}
+
+.about-content {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: hsl(32, 100%, 97%);
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem 0;
+  letter-spacing: 1px;
+  color: hsl(32, 100%, 97%);
+  font-family: 'Aboreto', serif;
+  text-align: center;
+}
+
+.about-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem 0;
+  color: #8B4513;
+  font-family: 'Aboreto', serif;
+}
+
+.about-content p {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.about-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.content-type {
+  background: rgba(139, 69, 19, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+.content-type h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.about-mission,
+.about-philosophy,
+.about-contact {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(26, 26, 26, 0.5);
+  border-radius: 8px;
+  border-left: 4px solid #8B4513;
+}
+
+@media (max-width: 700px) {
+  .about-page {
+    max-width: 95%;
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .about-content h2 {
+    font-size: 1.6rem;
+  }
+}
