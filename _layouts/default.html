@@ -20,19 +20,28 @@
         <h1 class="site-title">
           <a href="{{ '/' | relative_url }}" class="site-title-link">WEATHERED</a>
         </h1>
-        <p class="site-subtitle">No cathedral more sublime, No crucible more stern</p>
+        <p class="site-subtitle">No cathedral more sublime, No crucible more stern, Than the natural world</p>
+        
+        <!-- Menu Toggle Button -->
+        <div class="menu-toggle-container">
+          <button class="menu-toggle" id="menuToggle">
+            <span class="menu-icon">☰</span>
+          </button>
+        </div>
+        
+        <!-- Expanded Menu -->
+        <nav class="expanded-menu" id="expandedMenu">
+          <div class="menu-items">
+            <a href="{{ '/' | relative_url }}" class="menu-item" data-filter="trips">TRIPS</a>
+            <a href="{{ '/' | relative_url }}" class="menu-item" data-filter="gear">GEAR</a>
+            <a href="{{ '/' | relative_url }}" class="menu-item" data-filter="musings">MUSINGS</a>
+            <a href="{{ '/photography/' | relative_url }}" class="menu-item">PHOTOGRAPHY</a>
+            <a href="{{ '/about/' | relative_url }}" class="menu-item">ABOUT</a>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
-
-  <!-- Filter Navigation -->
-  <nav class="filter-nav">
-    <div class="filter-container">
-      <a href="{{ '/' | relative_url }}" class="filter-btn" data-filter="all">Trips</a>
-      <a href="{{ '/' | relative_url }}" class="filter-btn" data-filter="gear">Gear</a>
-      <a href="{{ '/' | relative_url }}" class="filter-btn" data-filter="musings">Musings</a>
-    </div>
-  </nav>
 
   <!-- Main Content -->
   <main class="site-content">
@@ -45,6 +54,33 @@
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const expandedMenu = document.getElementById('expandedMenu');
+      let isMenuOpen = false;
+      
+      menuToggle.addEventListener('click', function() {
+        if (isMenuOpen) {
+          expandedMenu.classList.remove('expanded');
+          isMenuOpen = false;
+        } else {
+          expandedMenu.classList.add('expanded');
+          isMenuOpen = true;
+        }
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (isMenuOpen && !menuToggle.contains(event.target) && !expandedMenu.contains(event.target)) {
+          expandedMenu.classList.remove('expanded');
+          isMenuOpen = false;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

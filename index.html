@@ -7,7 +7,7 @@ title: "Homepage"
 <section class="posts-list">
   {% if paginator %}
     {% for post in paginator.posts %}
-      <article class="post-item" data-post-type="{{ post.post_type | default: 'trips' }}">
+      <article class="post-item" data-category="{{ post.category }}" data-post-type="{{ post.post_type | default: '' }}">
         <a href="{{ post.url | relative_url }}" class="post-link">
           <!-- Background Image -->
           <div class="post-image">
@@ -77,33 +77,56 @@ title: "Homepage"
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const menuItems = document.querySelectorAll('.menu-item[data-filter]');
   const postItems = document.querySelectorAll('.post-item');
   
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function(e) {
+  // Function to filter posts
+  function filterPosts(filterType) {
+    postItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+      const postType = item.getAttribute('data-post-type');
+      
+      let shouldShow = false;
+      
+      if (filterType === 'all') {
+        shouldShow = true;
+      } else if (filterType === 'trips') {
+        shouldShow = category === 'trip-report';
+      } else if (filterType === 'gear') {
+        shouldShow = postType === 'gear';
+      } else if (filterType === 'musings') {
+        shouldShow = postType === 'musings' || (category === 'opinion' && !postType);
+      }
+      
+      if (shouldShow) {
+        item.style.display = 'block';
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      } else {
+        item.style.display = 'none';
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+      }
+    });
+  }
+  
+  // Add click handlers to menu items
+  menuItems.forEach(item => {
+    item.addEventListener('click', function(e) {
       e.preventDefault();
       
-      // Remove active class from all buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
+      // Remove active class from all menu items
+      menuItems.forEach(mi => mi.classList.remove('active'));
       
-      // Add active class to clicked button
+      // Add active class to clicked item
       this.classList.add('active');
       
       const filterType = this.getAttribute('data-filter');
-      
-      postItems.forEach(item => {
-        const postType = item.getAttribute('data-post-type');
-        
-        if (filterType === 'all' || postType === filterType) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+      filterPosts(filterType);
     });
   });
   
-  // No default active state - all posts shown by default
+  // Show all posts by default
+  filterPosts('all');
 });
 </script>
