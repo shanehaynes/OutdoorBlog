@@ -1,8 +1,8 @@
 # Site settings
 title: "Weathered"
 description: "Outdoor adventures, gear reviews, and trip reports"
-url: "https://shanehaynes.github.io/OutoorBlog"
-baseurl: "/OutoorBlog"
+url: "https://shanehaynes.github.io/OutdoorBlog"
+baseurl: "/OutdoorBlog"
 
 # Build settings
 markdown: kramdown
