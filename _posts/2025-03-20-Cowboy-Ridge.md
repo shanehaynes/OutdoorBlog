@@ -12,7 +12,6 @@ steepness: 50
 pitches: 4
 ---
 
-# Cowboy Ridge: A Classic Adventure Outside Zion
 
 Cowboy Ridge is a hidden gem just outside Zion National Park, offering a perfect blend of scrambling, route-finding, and jaw-dropping scenery. Our group set out early, eager to beat the heat and experience the ridge in solitude.
 

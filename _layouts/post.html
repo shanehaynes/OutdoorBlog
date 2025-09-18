@@ -7,45 +7,49 @@ layout: default
   <header class="post-header">
     {% if page.featured_image %}
       <div class="post-featured-image-wrapper">
-        <img src="{{ page.featured_image }}" alt="Featured image for {{ page.title }}" class="post-featured-image" />
+        <img src="{{ page.featured_image | relative_url }}" alt="Featured image for {{ page.title }}" class="post-featured-image" />
       </div>
     {% endif %}
     <h1 class="post-title-single">{{ page.title }}</h1>
   </header>
 
-  {% if page.category == "trip-report" and (page.mileage or page.elevation_gain or page.yds_grade or page.steepness or page.pitches or page.c2c_time) %}
-    <ul class="trip-stats">
-      {% if page.mileage %}
-        <li>Mileage: {{ page.mileage }}</li>
-      {% endif %}
-      {% if page.elevation_gain %}
-        <li>Elevation Gain: {{ page.elevation_gain }} ft</li>
-      {% endif %}
-      {% if page.yds_grade %}
-        <li>YDS Grade: {{ page.yds_grade }}</li>
-      {% endif %}
-      {% if page.steepness %}
-        <li>Steepness: {{ page.steepness }}</li>
-      {% endif %}
-      {% if page.pitches %}
-        <li>Pitches: {{ page.pitches }}</li>
-      {% endif %}
-      {% if page.c2c_time %}
-        <li>Time: {{ page.c2c_time }}</li>
-      {% endif %}
-    </ul>
-  {% elsif page.category == "opinion" and (page.brand or page.pros or page.cons) %}
-    <ul class="opinion-stats">
-      {% if page.brand %}
-        <li>Brand: {{ page.brand }}</li>
-      {% endif %}
-      {% if page.pros %}
-        <li>Pros: {{ page.pros | join: ", " }}</li>
-      {% endif %}
-      {% if page.cons %}
-        <li>Cons: {{ page.cons | join: ", " }}</li>
-      {% endif %}
-    </ul>
+  {% if page.category == "trip-report" %}
+    {% if page.mileage or page.elevation_gain or page.yds_grade or page.steepness or page.pitches or page.c2c_time %}
+      <ul class="trip-stats">
+        {% if page.mileage %}
+          <li>Mileage: {{ page.mileage }}</li>
+        {% endif %}
+        {% if page.elevation_gain %}
+          <li>Elevation Gain: {{ page.elevation_gain }} ft</li>
+        {% endif %}
+        {% if page.yds_grade %}
+          <li>YDS Grade: {{ page.yds_grade }}</li>
+        {% endif %}
+        {% if page.steepness %}
+          <li>Steepness: {{ page.steepness }}</li>
+        {% endif %}
+        {% if page.pitches %}
+          <li>Pitches: {{ page.pitches }}</li>
+        {% endif %}
+        {% if page.c2c_time %}
+          <li>Time: {{ page.c2c_time }}</li>
+        {% endif %}
+      </ul>
+    {% endif %}
+  {% elsif page.category == "opinion" %}
+    {% if page.brand or page.pros or page.cons %}
+      <ul class="opinion-stats">
+        {% if page.brand %}
+          <li>Brand: {{ page.brand }}</li>
+        {% endif %}
+        {% if page.pros %}
+          <li>Pros: {{ page.pros | join: ", " }}</li>
+        {% endif %}
+        {% if page.cons %}
+          <li>Cons: {{ page.cons | join: ", " }}</li>
+        {% endif %}
+      </ul>
+    {% endif %}
   {% endif %}
 
   <section class="post-body">

@@ -20,6 +20,14 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
 
+# Kramdown configuration for math
+kramdown:
+  math_engine: katex
+  math_engine_opts:
+    throw_on_error: false
+  input: GFM
+  hard_wrap: false
+
 # Pagination
 paginate: 5
 paginate_path: "/page/:num/"

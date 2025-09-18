@@ -931,3 +931,52 @@ body, .blog-post {
   transition: all 0.3s ease;
 }
 
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+th {
+  background-color: #3a3a3a;
+  font-weight: 600;
+  color: #f4f4f4;
+  border-bottom: 2px solid #555;
+}
+
+td {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-bottom: 1px solid #444;
+}
+
+tr:nth-child(even) td {
+  background-color: #333;
+}
+
+tr:hover td {
+  background-color: #404040;
+}
+
+/* Responsive table styling */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 8px 12px;
+  }
+}
+
