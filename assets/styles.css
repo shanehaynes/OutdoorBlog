@@ -468,22 +468,22 @@ body, .blog-post {
 }
 
 .about-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 3rem;
 }
 
 .about-title {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 600;
   margin: 0 0 1rem 0;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   color: hsl(32, 100%, 97%);
   font-family: 'Aboreto', serif;
 }
 
 .about-content {
   font-size: 1.15rem;
-  line-height: 1.7;
+  line-height: 1.8;
   color: hsl(32, 100%, 97%);
 }
 
@@ -506,14 +506,36 @@ body, .blog-post {
 }
 
 .about-content p {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   text-align: left;
+  text-indent: 1.5rem;
+  position: relative;
 }
 
 .about-intro {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 2rem;
+}
+
+.about-content p:last-of-type {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: hsl(32, 100%, 90%);
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(139, 69, 19, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(139, 69, 19, 0.3);
+  text-indent: 0;
+}
+
+.about-content p:last-of-type span {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
 }
 
 .content-grid {
@@ -533,16 +555,6 @@ body, .blog-post {
 .content-type h3 {
   text-align: center;
   margin-top: 0;
-}
-
-.about-mission,
-.about-philosophy,
-.about-contact {
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background: rgba(26, 26, 26, 0.5);
-  border-radius: 8px;
-  border-left: 4px solid #8B4513;
 }
 
 /* Pagination */
@@ -675,7 +687,7 @@ body, .blog-post {
   }
   
   .about-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .content-grid {
