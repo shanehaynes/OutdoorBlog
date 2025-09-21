@@ -147,7 +147,7 @@ body, .blog-post {
 .menu-item {
   color: hsl(32, 100%, 97%);
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aboreto', serif;
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: 1px;
@@ -773,7 +773,7 @@ body, .blog-post {
   padding: 0.8rem 1.5rem;
   border-radius: 6px;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aboreto', serif;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -844,7 +844,7 @@ body, .blog-post {
   color: #8B4513;
   padding: 0.5rem;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aboreto', serif;
   font-weight: 600;
   font-size: 1.5rem;
   transition: all 0.3s ease;
@@ -900,7 +900,7 @@ body, .blog-post {
   color: #8B4513;
   padding: 0.5rem;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aboreto', serif;
   font-weight: 600;
   font-size: 1.5rem;
   transition: all 0.3s ease;
