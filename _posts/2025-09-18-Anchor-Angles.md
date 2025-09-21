@@ -2,6 +2,7 @@
 layout: post
 title: "Physics of Climbing: Anchor Angles and Force Magnification"
 date: 2025-09-18
+post_type: musings
 category: musings
 featured_image: "assets/images/AnchorAngles/generic.jpeg"
 ---
