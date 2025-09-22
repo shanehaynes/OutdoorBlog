@@ -11,7 +11,8 @@ The construction of a solid anchor is an important component of a climber's tool
 
 The art of building a beautiful anchor is complex and there are plenty of articles explaining _what_ one should do. If you are unfamiliar with anchor building, I recommend you first learn what to do. Here, we will dive into the science behind *why* some anchors are much better than others - specifically how the interior angle between pieces relates to load on those pieces. This will be much more relevant if you know anchor building basics already.
 
-*If you are only looking for takeaways and want to skip the science portion, go to the examples and look at how different angles produce widely different loads. At some angles, traditional anchors **will not hold**.*
+*If you are only looking for practical advice and want to skip the science portion, skim over the forces tables to see how different angles produce widely different loads and then read the "Take Aways" for tips. At some angles, traditional anchors **will not hold**.*
+
 # The Science
 We are modeling short, quasi-static snapshots of an anchor under load, using:
 - **Vector resolution**
@@ -31,7 +32,7 @@ Although important to admit for transparency, the inclusion or omission of the a
 
 $T_1 = \frac{Fsin(\alpha)}{sin(\alpha + \beta)}$
 
-$T_2 = \frac{Fsin(\alpha)}{sin(\alpha + \beta)}$
+$T_2 = \frac{Fsin(\beta)}{sin(\alpha + \beta)}$
 
 where 
 
@@ -45,6 +46,13 @@ $\alpha =$ interior angle from masterpoint to anchor piece 1
 
 $\beta =$ interior angle from masterpoint to anchor piece 2
 
+Since alpha and beta are equivalent, we can simplify the equation down to:
+
+$T = \frac{F}{1 + 2 cos(\theta)}$ 
+
+where
+
+$\theta =$ interior angle between pieces ($\alpha + \beta$).
 
 <div class="image-annotated">
   <img src="{{ '/assets/images/AnchorAngles/generic.jpeg' | relative_url }}" alt="Blank Anchor Example" />
@@ -63,13 +71,13 @@ We arrive at anchor station and build an anchor like so:
   <div class="image-annotation"></div>
 </div>
 
-This anchor has a very shallow interior angle of 30 degrees. Given an 8kn load at the equalized masterpoint, we can deduce that each anchor piece is experiencing 4.14kn. 
+This anchor has a very shallow interior angle of 30 degrees. Given an 8kN load at the equalized masterpoint, we can deduce that each anchor piece is experiencing 4.14kN. 
 
 $T_1 = \frac{8sin(15\degree)}{sin(30\degree)} = 4.14$
 
 Since $T_1 = T_2$ (this is true because the masterpoint is equalized), $T_2$ also equals 4.14. 
 
-**At a 30 degree angle, each anchor piece will experience 4.14kn.**
+**At a 30 degree angle, each anchor piece will experience 4.14kN.**
 
 #### Medium Anchor Angle 
 
@@ -79,13 +87,13 @@ Now assume we arrive at the anchor station and build this:
   <div class="image-annotation"></div>
 </div>
 
-This anchor has an interior angle of 90 degrees. Given an 8kn load at the equalized masterpoint, we can deduce that each anchor piece is experiencing 5.66kn of force. 
+This anchor has an interior angle of 90 degrees. Given an 8kN load at the equalized masterpoint, we can deduce that each anchor piece is experiencing 5.66kN of force. 
 
 $T_1 = \frac{8sin(45\degree)}{sin(90\degree)} = 5.66$
 
 Since $T_1 = T_2$ (this is true because the masterpoint is equalized), $T_2$ also equals 5.66. 
 
-**At a 90 degree angle, each anchor piece will experience 5.66kn.**
+**At a 90 degree angle, each anchor piece will experience 5.66kN.**
 
 #### Wide Anchor Angle
 
@@ -95,13 +103,13 @@ Now we get to the anchor station and faultily build this anchor:
   <div class="image-annotation"></div>
 </div>
 
-This anchor has a wide interior angle of 150 degrees. Given an 8kn load at the equalized masterpoint, we can deduce that each anchor piece is experiencing **15.45kn of force**. 
+This anchor has a wide interior angle of 150 degrees. Given an 8kN load at the equalized masterpoint, we can deduce that each anchor piece is experiencing **15.45kN of force**. 
 
 $T_1 = \frac{8sin(75\degree)}{sin(150\degree)} = 15.45$
 
 Since $T_1 = T_2$ (this is true because the masterpoint is equalized), $T_2$ also equals 15.45. 
 
-**At a 150 degree angle, each anchor piece will experience 15.45kn.** This is more force than a typical cam, nut, hex, sling, and other standard climbing gear can withstand. An anchor built at such a wide angle can experience anchor failure from the magnification of force.
+**At a 150 degree angle, each anchor piece will experience 15.45kN.** This is more force than a typical cam, nut, hex, and other standard climbing gear can withstand. An anchor built at such a wide angle can experience anchor failure from the magnification of force.
 
 #### Angles to Forces Table
 
@@ -111,21 +119,21 @@ To drive this home, see how forces dramatically increase at really wide angles.
 | -------------------- | --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | --- | ----- | ----- | ----- | --- |
 | Force per piece (kN) | ~4  | 4.03 | 4.14 | 4.33 | 4.62 | 5.04 | 5.66 | 6.57 | 8   | 10.45 | 15.45 | 30.65 | ∞   |
 
-That is not a typo - it would actually take an infinite amount of energy to get the angle between the masterpoint and its anchor pieces to 180 degrees. Of course this will never happen but this theoretical limit highlights why the anchor absorbs an increasing amount of force with wider interior angles.
+That is not a typo - it would actually take an infinite amount of force to get the angle between the masterpoint and its anchor pieces to 180 degrees. Of course this will never happen but this theoretical limit highlights why the anchor absorbs an increasing amount of force with wider interior angles.
 
 Also worth highlighting is how quickly the forces skyrocket when at the higher end of anchor angles. Small angle differences like that between 120 and 135 is the difference between 8 and 10.5 kilonewtons -  which could very well be the difference between an anchor withstanding and failing in real world climbing scenario.
 
-On the other hand, if you have marginal anchor pieces that are causing worry, take advantage of anchor angles to increase the safety of your setup! If you shallow your anchor angles from 120 to 60, you can cut an 8kn force into a 4.5kn load for each anchor piece. That is a significant improvement! 
+On the other hand, if you have marginal anchor pieces that are causing worry, take advantage of anchor angles to increase the safety of your setup! If you shallow your anchor angles from 120 to 60, you can cut an 8kN force into a 4.5kN load for each anchor piece. That is a significant improvement! 
 
 ## Three Piece Anchors
 With three piece anchors, the same fundamentals apply. 
 <div class="image-annotated">
-  <img src="{{ '/assets/images/AnchorAngles/threePeice.jpeg' | relative_url }}" alt="Three Piece Anchor Example" />
+  <img src="{{ '/assets/images/AnchorAngles/threePiece.jpeg' | relative_url }}" alt="Three Piece Anchor Example" />
   <div class="image-annotation"></div>
 </div>
-We now measure angles by the sections between pieces. There are two sections in the depiction above. The total angle of the pieces placed may be 120 degrees but each section would only be about 60 degrees. This is the noteworthy change to three peice anchors. 
+We now measure angles by the sections between pieces. There are two sections in the depiction above. The total angle of the pieces placed may be 120 degrees but each section would only be about 60 degrees. This is the noteworthy change to three piece anchors. 
 
-Three piece anchors do reduce the force experienced by each anchor piece, by virtue of there being more pieces, but not by as much may be anticipated. For example, with a 60 degree interior angle with a two piece anchor and an 8kn load, each anchor piece experienced 4.62kn. With three pieces, that reduces to 4kn. While force reduction may not be a compelling argument for including more pieces, evaluating the strength of your placements can be tricky so more pieces do allow for a greater margin of error in human judgement. 
+Three piece anchors do reduce the force experienced by each anchor piece, by virtue of there being more pieces, but not by as much may be anticipated. For example, with a 60 degree interior angle with a two piece anchor and an 8kN load, each anchor piece experienced 4.62kN. With three pieces, that reduces to 4kN. While force reduction may not be a compelling argument for including more pieces, evaluating the strength of your placements can be tricky so more pieces do allow for a greater margin of error in human judgement. 
 
 #### 3 Piece Anchor Equation and Table
 
@@ -133,11 +141,17 @@ We used the below formula to calculate forces for the table above.
 
 $T = \frac{F}{1 + 2 cos(\theta)}$ 
 
+where 
+
+$\theta =$ interior angle between pieces.
+
+We are assuming the angles between the three pieces are equal. 
+
 | Angle (deg)           | 0    | 15   | 30   | 45   | 60  | 75   | 90  |
 | --------------------- | ---- | ---- | ---- | ---- | --- | ---- | --- |
 | Force per piece  (kN) | 2.67 | 2.73 | 2.93 | 3.13 | 4   | 5.27 | 8   |
 
-Illustrated clearly is a similar pattern to the table for two piece anchors. The higher the angle, the higher the forces. This relationship is not linear and at the higher end of angles, forces can jump a drastic amount. For example, at 75 degrees, our pieces experience approximately 5kn but at 90 degrees, they experience 8kn. 
+Illustrated clearly is a similar pattern to the table for two piece anchors. The higher the angle, the higher the forces. This relationship is not linear and at the higher end of angles, forces can jump a drastic amount. For example, at 75 degrees, our pieces experience approximately 5kN but at 90 degrees, they experience 8kN. 
 
 This table does not go past 90 degrees for a reason: to build a 3 piece anchor in which the interior angles between pieces is greater than 90 degrees, you would have to put the masterpoint above the side pieces. This is an obviously flawed and pretty unrealistic anchor set up. 
 
@@ -149,13 +163,13 @@ $T = \frac{F}{1 + 2 cos(\theta)}$
 
 Do not build anchors with wide angles between pieces, no matter how many pieces exist in the anchor. Forces can become greater than your pieces are capable of handling and anchor explosion due to load magnification is possible. 
 
-How can you prevent this? The simple and easy way to prevent wide interior anchor angles is have the masterpoint a significant distance below the pieces of your anchor. The lower your masterpoint, the lower the angles between pieces and the lower the forces your pieces will experience. 
+How can you prevent this? The simple and easy way to prevent wide interior anchor angles is have the masterpoint a significant distance below the pieces of your anchor. Furthermore, if one placed pieces closer together, this would also shallow the angle although closer pieces may not always be possible or advisable due to rock quality. The lower your masterpoint, the lower the angles between pieces and the lower the forces your pieces will experience. 
 
 <div class="image-annotated">
   <img src="{{ '/assets/images/AnchorAngles/multiple.jpeg' | relative_url }}" alt="Multiple Anchor Example" />
   <div class="image-annotation"></div>
 </div>
 
-<span style="font-size:25px; text-align:center; display:block; font-style:italic;"> Therefore, create your masterpoint a good distance below your lowest placed anchor piece to reduce interior anchor angles. </span>
+<span style="font-size:25px; text-align:center; display:block; font-style:italic;"> Create your masterpoint a good distance below your lowest placed anchor piece to reduce the forces your anchor experiences. </span>
 
 
